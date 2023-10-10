@@ -10,6 +10,7 @@ psql -U postgres
 create database aspire;
 create user aspire_user with encrypted password 'aspire@123';
 grant all privileges on database aspire to aspire_user;
+alter user aspire_user createdb;
 ```
 
 **Django Application Setup**
@@ -25,5 +26,6 @@ grant all privileges on database aspire to aspire_user;
 6. install requirements  `pip install -r requirements.txt`
 7. run migrations `python manage.py migrate`
 8. run server `python manage.py runserver`
+9. to run test cases `python manage.py test aspireloan`
 
 After completing the above steps Django server should be up and running
